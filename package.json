@@ -37,7 +37,8 @@
     "dev:quickapp": "cross-env NODE_ENV=development UNI_PLATFORM=quickapp vue-cli-service uni-build --watch",
     "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js",
     "serve:quickapp": "node node_modules/@dcloudio/uni-quickapp/bin/serve.js",
-    "lint": "eslint --fix --ext .js,.vue src"
+    "lint": "eslint --fix --ext .js,.vue src",
+    "commit": "git cz"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.0-26920200409002",
@@ -72,6 +73,7 @@
     "@vue/cli-service": "~4.3.0",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
+    "git-cz": "^4.7.6",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "mini-types": "*",
