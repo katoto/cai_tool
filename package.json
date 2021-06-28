@@ -1,6 +1,6 @@
 {
   "name": "@hll/boilerplate-project-uni-chejj",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "ISC",
   "maintainers": [
     {
@@ -38,7 +38,10 @@
     "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js",
     "serve:quickapp": "node node_modules/@dcloudio/uni-quickapp/bin/serve.js",
     "lint": "eslint --fix --ext .js,.vue src",
-    "commit": "git cz"
+    "commit": "git cz",
+    "release:major": "standard-version --release-as major",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.0-26920200409002",
@@ -76,6 +79,7 @@
     "git-cz": "^4.7.6",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
+    "lint-staged": "^11.0.0",
     "mini-types": "*",
     "miniprogram-api-typings": "^2.8.0-2",
     "node-sass": "^4.14.1",
@@ -83,6 +87,7 @@
     "postcss-comment": "^2.0.0",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
+    "standard-version": "^9.3.0",
     "vue-template-compiler": "^2.6.11",
     "yorkie": "^2.0.0"
   },
