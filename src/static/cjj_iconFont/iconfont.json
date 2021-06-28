@@ -1,0 +1,156 @@
+{
+  "id": "2499123",
+  "name": "车吉吉",
+  "font_family": "cjj-iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "21122260",
+      "name": "navigation",
+      "font_class": "navigation",
+      "unicode": "e75f",
+      "unicode_decimal": 59231
+    },
+    {
+      "icon_id": "21122155",
+      "name": "add",
+      "font_class": "add",
+      "unicode": "e75d",
+      "unicode_decimal": 59229
+    },
+    {
+      "icon_id": "21122156",
+      "name": "certified",
+      "font_class": "certified",
+      "unicode": "e75e",
+      "unicode_decimal": 59230
+    },
+    {
+      "icon_id": "21122133",
+      "name": "Charging pile",
+      "font_class": "Chargingpile",
+      "unicode": "e75c",
+      "unicode_decimal": 59228
+    },
+    {
+      "icon_id": "21122028",
+      "name": "order",
+      "font_class": "order",
+      "unicode": "e759",
+      "unicode_decimal": 59225
+    },
+    {
+      "icon_id": "21122029",
+      "name": "coupon",
+      "font_class": "coupon",
+      "unicode": "e75a",
+      "unicode_decimal": 59226
+    },
+    {
+      "icon_id": "21122030",
+      "name": "gas station",
+      "font_class": "gasstation",
+      "unicode": "e75b",
+      "unicode_decimal": 59227
+    },
+    {
+      "icon_id": "21121753",
+      "name": "show_less",
+      "font_class": "show_less",
+      "unicode": "e757",
+      "unicode_decimal": 59223
+    },
+    {
+      "icon_id": "21121754",
+      "name": "show_more",
+      "font_class": "show_more",
+      "unicode": "e758",
+      "unicode_decimal": 59224
+    },
+    {
+      "icon_id": "21121633",
+      "name": "ic_open",
+      "font_class": "ic_open",
+      "unicode": "e755",
+      "unicode_decimal": 59221
+    },
+    {
+      "icon_id": "21121634",
+      "name": "ic_close",
+      "font_class": "ic_close",
+      "unicode": "e756",
+      "unicode_decimal": 59222
+    },
+    {
+      "icon_id": "21121310",
+      "name": "expired",
+      "font_class": "expired",
+      "unicode": "e753",
+      "unicode_decimal": 59219
+    },
+    {
+      "icon_id": "21121134",
+      "name": "used",
+      "font_class": "used",
+      "unicode": "e754",
+      "unicode_decimal": 59220
+    },
+    {
+      "icon_id": "21120944",
+      "name": "feedback",
+      "font_class": "feedback",
+      "unicode": "e750",
+      "unicode_decimal": 59216
+    },
+    {
+      "icon_id": "21120945",
+      "name": "contact us",
+      "font_class": "contactus",
+      "unicode": "e751",
+      "unicode_decimal": 59217
+    },
+    {
+      "icon_id": "21120946",
+      "name": "introduction",
+      "font_class": "introduction",
+      "unicode": "e752",
+      "unicode_decimal": 59218
+    },
+    {
+      "icon_id": "16208919",
+      "name": "search",
+      "font_class": "search1",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "19539911",
+      "name": "ic_arrow_up",
+      "font_class": "arrow-up",
+      "unicode": "e70f",
+      "unicode_decimal": 59151
+    },
+    {
+      "icon_id": "19539912",
+      "name": "ic_arrow_right",
+      "font_class": "arrow-right",
+      "unicode": "e710",
+      "unicode_decimal": 59152
+    },
+    {
+      "icon_id": "19539913",
+      "name": "ic_arrow_left",
+      "font_class": "arrow-left",
+      "unicode": "e711",
+      "unicode_decimal": 59153
+    },
+    {
+      "icon_id": "19539914",
+      "name": "ic_arrow_down",
+      "font_class": "arrow-down",
+      "unicode": "e712",
+      "unicode_decimal": 59154
+    }
+  ]
+}

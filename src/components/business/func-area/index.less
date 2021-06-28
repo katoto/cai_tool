@@ -1,0 +1,81 @@
+.func-area{
+    background: #FFFFFF;
+    border-radius: 16upx;
+    .area-title{
+        font-size: 30upx;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #333333;
+        padding-left: 20upx;
+        padding-top: 20upx;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 90%;
+    }
+    .no-title{
+        margin-top: 16upx;
+    }
+    .area-cont{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .cont-item{
+            width: 174upx; // 176upx
+            // border: 1px solid red;
+            text-align: center;
+            padding: 22upx 0;
+            .item-img-box{
+                position: relative;
+                margin-top: 2upx;
+                // border: 1px solid #ccc;
+                .item-img{
+                    display: block;
+                    margin: 0 auto;
+                    width: 60upx;
+                    height: 60upx;
+                }
+                .flag{
+                    font-size: 16upx;
+                    font-family: PingFang-SC-Regular, PingFang-SC;
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    min-width: 40upx;
+                    padding: 2upx 6upx;
+                    background: #FF4832;
+                    border-radius: 12upx 12upx 12upx 0;
+                    position: absolute;
+                    left: 106upx;
+                    border: 1px solid #fff;
+                    top: -12upx;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+            .item-desc{
+                font-size: 24upx;
+                font-family: PingFang-SC-Regular, PingFang-SC;
+                font-weight: 400;
+                color: #333333;
+                display: block;
+                line-height: 34upx;
+                margin-top: 6upx;
+            }
+
+        }
+        
+    }
+}
+.usercenter-type{
+    .area-cont{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .cont-item{
+            width: 140upx;
+            .item-desc{
+                color: #666666 !important;
+            }
+        }
+    }
+}
