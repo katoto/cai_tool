@@ -38,7 +38,7 @@ uni-app 微信小程序项目模板整合了路由配置、接口请求 request�
 
 ---
 
-### 参考原车吉吉 https://huolala.feishu.cn/docs/doccnUUd5wrl9hE52xPzqKR5p2b
+参考原车吉吉 https://huolala.feishu.cn/docs/doccnUUd5wrl9hE52xPzqKR5p2b
 
 ### 二、git 提交规范
 
