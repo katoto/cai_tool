@@ -94,9 +94,16 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
     "release:patch": "standard-version --release-as patch"
 ```
 
-### 三、其他资料
+### 五、其他资料
 
 uni-app 小程序基础及业务组件库
 http://uniui.w3c.huolala.work
 
 [uniapp 官网](https://uniapp.dcloud.io/)
+
+注意加上`manifest.json` 的 appid & name
+
+```
+  "name": "小程序名称",
+  "appid": "wxcbxxxxxxxxd2",
+```
