@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](http://gitlab.huolala.cn:56358/hll-fe/boilerplates/boilerplate-project-uni-chejj/compare/v0.2.3...v0.2.4) (2021-06-29)
+
+### Features
+
+- 补充 package.json 文件 ([2c24728](http://gitlab.huolala.cn:56358/hll-fe/boilerplates/boilerplate-project-uni-chejj/commit/2c247282d8f84c49d23efa833cd6a6e0c2898f09))
+
 ### [0.2.3](http://gitlab.huolala.cn:56358/hll-fe/boilerplates/boilerplate-project-uni-chejj/compare/v0.2.2...v0.2.3) (2021-06-29)
 
 ### [0.2.2](http://gitlab.huolala.cn:56358/hll-fe/boilerplates/boilerplate-project-uni-chejj/compare/v0.2.1...v0.2.2) (2021-06-29)
