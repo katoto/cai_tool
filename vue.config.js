@@ -1,8 +1,8 @@
 module.exports = {
   filenameHashing: true, // 文件hash
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     // 发行或运行时启用了压缩时会生效
-    config.optimization.minimizer("terser").tap((args) => {
+    config.optimization.minimizer("terser").tap(args => {
       const compress = args[0].terserOptions.compress;
       // 非 App 平台移除 console 代码(包含所有 console 方法，如 log,debug,info...)
       compress.drop_console = true;
@@ -10,7 +10,7 @@ module.exports = {
     });
     config.optimization.splitChunks({
       automaticNameDelimiter: "_",
-      name: false,
+      name: false
     });
   },
   configureWebpack: {
@@ -22,7 +22,7 @@ module.exports = {
       //只给出 js 文件的性能提示
       assetFilter: function(assetFilename) {
         return assetFilename.endsWith(".js");
-      },
-    },
-  },
+      }
+    }
+  }
 };
