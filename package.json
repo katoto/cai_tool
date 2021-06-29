@@ -1,8 +1,14 @@
 {
   "name": "@hll/boilerplate-project-uni-chejj",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": "true",
   "description": "uni-app 微信小程序项目模版",
+  "keywords": [
+    "van",
+    "uni-app",
+    "template"
+  ],
+  "main": "./src/main.js",
   "license": "ISC",
   "maintainers": [
     {
@@ -41,6 +47,7 @@
     "serve:quickapp": "node node_modules/@dcloudio/uni-quickapp/bin/serve.js",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx --fix ./src",
     "commit": "git cz",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,md,json}'",
     "release:major": "standard-version --release-as major",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch"
