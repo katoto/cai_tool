@@ -1,11 +1,11 @@
-import getUrlParams from "./getUrlParam.js";
-import joinParams from "./joinParams.js";
-import removeParam from "./removeParam.js";
-import replaceParam from "./replaceParam.js";
+import getUrlParameters from "./getUrlParam.js";
+import joinParameters from "./joinParams.js";
+import removeParameter from "./removeParam.js";
+import replaceParameter from "./replaceParam.js";
 
 module.exports = {
-  getUrlParams,
-  joinParams,
-  removeParam,
-  replaceParam
+  getUrlParams: getUrlParameters,
+  joinParams: joinParameters,
+  removeParam: removeParameter,
+  replaceParam: replaceParameter
 };

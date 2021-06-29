@@ -6,29 +6,28 @@
  * @return {String} 转换后的货币
  */
 const formatMaskCurrency = (currency, trimTailZero) => {
-  if (null == currency) {
-    return '??'
+  if (undefined == currency) {
+    return "??";
   }
-	if(typeof currency == 'number') {
-		currency = currency.toString()
-	}
-  let dotIndex = -1
-  let hasDot = -1 != (dotIndex = currency.indexOf('.'))
-  let prefix = hasDot ? currency.substring(0, dotIndex) : currency
-  let suffix = hasDot ? currency.substring(dotIndex) : ''
+  if (typeof currency == "number") {
+    currency = currency.toString();
+  }
+  let dotIndex = -1;
+  let hasDot = -1 != (dotIndex = currency.indexOf("."));
+  let prefix = hasDot ? currency.slice(0, Math.max(0, dotIndex)) : currency;
+  let suffix = hasDot ? currency.slice(Math.max(0, dotIndex)) : "";
 
   if (suffix.length > 0 && true == trimTailZero) {
-    suffix = suffix.replace(/0+$/g, '')
-    if ('.' == suffix) {
-      suffix = ''
+    suffix = suffix.replace(/0+$/g, "");
+    if ("." == suffix) {
+      suffix = "";
     }
   }
 
   let formatCurrent =
-    prefix.replace(/([a-zA-Z\d\?\*])(?=(?:[a-zA-Z\d\?\*]{3})+$)/g, '$1,') +
-    suffix
+    prefix.replace(/([\d*?A-Za-z])(?=(?:[\d*?A-Za-z]{3})+$)/g, "$1,") + suffix;
 
-  return formatCurrent
-}
+  return formatCurrent;
+};
 
-export default formatMaskCurrency
+export default formatMaskCurrency;

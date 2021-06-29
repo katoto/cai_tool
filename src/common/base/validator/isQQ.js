@@ -4,7 +4,7 @@
  * @return {Bool} 是否qq号
  */
 const isQQ = value => {
-  return /^\d{5,18}$/.test(value)
-}
+  return /^\d{5,18}$/.test(value);
+};
 
-export default isQQ
+export default isQQ;

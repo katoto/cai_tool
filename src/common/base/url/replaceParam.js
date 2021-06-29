@@ -6,10 +6,10 @@
  * @param {string} replaceWith 替换的参数值
  * @return {string} 替换后的url
  */
-const replaceParam = (url, paramName, replaceWith) => {
-  var re = eval('/(' + paramName + '=)([^&]*)/gi')
-  var nUrl = url.replace(re, paramName + '=' + replaceWith)
-  return nUrl
-}
+const replaceParameter = (url, parameterName, replaceWith) => {
+  var re = eval("/(" + parameterName + "=)([^&]*)/gi");
+  var nUrl = url.replace(re, parameterName + "=" + replaceWith);
+  return nUrl;
+};
 
-export default replaceParam
+export default replaceParameter;

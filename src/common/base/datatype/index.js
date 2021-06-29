@@ -12,9 +12,9 @@
  * isFunction
  * @returns {Boolean}
  */
-let dataType = (function () {
+let dataType = (function() {
   let type = {};
-  let typeArr = [
+  let typeArray = [
     "String",
     "Object",
     "Number",
@@ -24,10 +24,10 @@ let dataType = (function () {
     "Symbol",
     "Function"
   ];
-  for (let i = 0; i < typeArr.length; i++) {
-    type["is" + typeArr[i]] = function (obj) {
+  for (const element of typeArray) {
+    type["is" + element] = function(object) {
       return (
-        Object.prototype.toString.call(obj) === "[object " + typeArr[i] + "]"
+        Object.prototype.toString.call(object) === "[object " + element + "]"
       );
     };
   }

@@ -8,7 +8,8 @@
     <view class="hll-dialog" @click.stop="onContentClick">
       <view class="title" v-if="title" :style="titleStyle">{{ title }}</view>
       <view class="content" :style="msgStyle">
-        <slot v-if="isSlotContent"></slot><text class="cont-txt" v-else>{{ msg }}</text>
+        <slot v-if="isSlotContent"></slot
+        ><text class="cont-txt" v-else>{{ msg }}</text>
       </view>
       <view class="bottom-btn" v-if="bottomBtn">
         <view
@@ -51,7 +52,7 @@ const defaultData = {
   cancleHandler: null,
   titleStyle: {},
   msgStyle: {},
-  willclose: true, // 点击[取消],[确定],[关闭]后直接关闭弹窗
+  willclose: true // 点击[取消],[确定],[关闭]后直接关闭弹窗
 };
 
 export default {
@@ -68,13 +69,13 @@ export default {
       this.show(options);
     },
     show(options = {}) {
-      Object.keys(defaultData).forEach((key) => {
+      for (const key of Object.keys(defaultData)) {
         this[key] =
           options[key] !== undefined ? options[key] : defaultData[key];
-      });
+      }
       this.isShow = true;
     },
-    hide(options = {}) {
+    hide() {
       this.isShow = false;
     },
     onContentClick() {},
@@ -86,8 +87,8 @@ export default {
       } else {
         this.hide();
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -1,6 +1,6 @@
 ## 快速上手
 
-uni-app 小程序项目模板整合了路由配置、接口请求、状态管理、mock 和代理等通用功能，目标是使开发专注于业务。
+uni-app 微信小程序项目模板整合了路由配置、接口请求 request、状态管理 store、mock 模拟 和 proxy 代理通用业务功能,也设置了规范 GIT 代码提交信息&自动化版本管理。该模版的目标是使开发专注于业务，更快速支撑业务。
 
 ### 一、上手步骤 & 开发
 
@@ -22,12 +22,18 @@ uni-app 小程序项目模板整合了路由配置、接口请求、状态管理
 **本地开发**
 
 - terminal 跑命令 `npm run dev:mp-weixin`
-- 检查 fiddler `xxx.xxx.xx.xxx b.leka.club` 代理（容易遗漏）
+  走 stg 环境则： npm run dev:mp-weixin-stg
+  走 pre 环境则： npm run dev:mp-weixin-pre
+  走 prod & 线上 环境则： npm run dev:mp-weixin
+- 检查 fiddler `xxx.xxx.xx.xxx www.xxx.com` 代理（容易遗漏）
 - 利用[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，打开 dist/dev 工程即可。
 
 **打包发布**
 
 - terminal 跑命令 `npm run build:mp-weixin`
+  走 stg 环境则： npm run build-weixin-stg
+  走 pre 环境则： npm run build:mp-weixin-pre
+  走 prod & 线上 环境则： npm run build:mp-weixin
 - 利用微信开发者工具，打开 dist/build 工程, 然后上传审核 =》 发布
 
 ---
@@ -57,9 +63,40 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 - test - 测试相关的修改，比如增加测试用例。
 - build - 打包部分小调整
 
-###
+### 三、集成 gitHooks 对 commit 提交进行检查
+
+这里利用`yorkie` 和`lint-staged` 来使 git hooks 操作变的更加容易。
+相关配置：
+
+```
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node scripts/check-commit.js"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --fix",
+    "*.{md,json,css,less,scss}": "prettier --write"
+  }
+```
+
+### 四、集成自动版本号维护
+
+这里利用`standard-version` 来实现。每次新增 npm 包版本时，会自动维护版本号和`CHANGELOG.md`修改日志。
+
+相关配置：
+
+```
+    // 主版本
+    "release:major": "standard-version --release-as major",
+    // 次版本
+    "release:minor": "standard-version --release-as minor",
+    // 修订版本
+    "release:patch": "standard-version --release-as patch"
+```
 
 ### 三、其他资料
 
 uni-app 小程序基础及业务组件库
 http://uniui.w3c.huolala.work
+
+[uniapp 官网](https://uniapp.dcloud.io/)

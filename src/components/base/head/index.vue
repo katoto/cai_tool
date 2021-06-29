@@ -3,7 +3,7 @@
     class="nav"
     :style="{
       height: navH + 'px',
-      background: bgColor,
+      background: bgColor
     }"
   >
     <view
@@ -37,49 +37,46 @@
 import HllIcon from "@/components/base/icon";
 export default {
   components: {
-    HllIcon,
+    HllIcon
   },
   data() {
     return {
       pageLength: 1,
       // #ifdef MP-WEIXIN
-      navH: uni.getSystemInfoSync().statusBarHeight + 46,
-      // #endif
-      // #ifdef H5
-      navH: 46,
+      navH: uni.getSystemInfoSync().statusBarHeight + 46
       // #endif
     };
   },
   props: {
     title: {
       type: String,
-      default: "默认标题",
+      default: "默认标题"
     },
     bgColor: {
       type: String,
-      default: "#fff",
+      default: "#fff"
     },
     showLeftBtn: {
       type: Boolean,
-      default: true,
+      default: true
     },
     titleFontSize: {
       type: String,
-      default: "12px",
+      default: "12px"
     },
     titleColor: {
       type: String,
-      default: "##0C0C0C",
+      default: "##0C0C0C"
     },
     hasLeftBtnCb: {
       type: Boolean,
-      default: false,
+      default: false
     },
     isHomeBtn: {
       // 是否展示返回主页按钮，默认无返回键时展示，有返回键时隐藏
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   created() {
     this.pageLength = getCurrentPages().length;
@@ -102,8 +99,8 @@ export default {
         return;
       }
       this.$pageHref("/pages/home/index/index");
-    },
-  },
+    }
+  }
   // height:var(--status-bar-height);
 };
 </script>

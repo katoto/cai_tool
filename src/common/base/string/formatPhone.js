@@ -4,23 +4,29 @@
  * @return {String} 格式化后的字符串
  */
 const formatPhone = instr => {
-  var str = instr.replace(/ /g, '')
-  let len = str.length
+  var string = instr.replace(/ /g, "");
+  let length_ = string.length;
   switch (true) {
-    case len > 11:
-      str = str.substr(0, 3) + ' ' + str.substr(3, 4) + ' ' + str.substr(7, 4)
-      break
-    case len > 7:
-      str = str.substr(0, 3) + ' ' + str.substr(3, 4) + ' ' + str.substr(7)
-      break
-    case len > 3:
-      str = str.substr(0, 3) + ' ' + str.substr(3)
-      break
+    case length_ > 11:
+      string =
+        string.slice(0, 3) +
+        " " +
+        string.slice(3, 7) +
+        " " +
+        string.slice(7, 11);
+      break;
+    case length_ > 7:
+      string =
+        string.slice(0, 3) + " " + string.slice(3, 7) + " " + string.slice(7);
+      break;
+    case length_ > 3:
+      string = string.slice(0, 3) + " " + string.slice(3);
+      break;
     default:
-      str = instr
+      string = instr;
   }
 
-  return str
-}
+  return string;
+};
 
-export default formatPhone
+export default formatPhone;

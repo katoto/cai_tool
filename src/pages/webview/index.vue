@@ -13,19 +13,19 @@ export default {
       currUrl: "",
       webviewStyles: {
         progress: {
-          color: "#FF3333",
-        },
-      },
+          color: "#FF3333"
+        }
+      }
     };
   },
-  onLoad(params) {
-    if (params && params.url) {
-      this.currUrl = decodeURIComponent(params.url);
+  onLoad(parameters) {
+    if (parameters && parameters.url) {
+      this.currUrl = decodeURIComponent(parameters.url);
     }
   },
   onPullDownRefresh() {
     uni.stopPullDownRefresh();
   },
-  methods: {},
+  methods: {}
 };
 </script>

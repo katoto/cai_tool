@@ -1,42 +1,29 @@
 <template>
   <view class="content-box">
     <view class="text">Hello uni template</view>
-    <view class="text">新建分支，一同改进</view>
+    <view class="text">新建分支，一起改进</view>
   </view>
 </template>
 
 <script>
-import VDialog from "@/components/base/dialog/index";
-
 export default {
-  components: {
-    VDialog,
-  },
   data() {
     return {
-      pageCityName: "",
+      pageCityName: ""
     };
   },
   computed: {
     isLog() {
       return !!this.$store.state.isLog;
-    },
+    }
   },
   watch: {},
   mounted() {},
-  onShow() {
-    // 获取各个资源位数据
-  },
+  onShow() {},
   onPullDownRefresh() {},
   methods: {
-    imgErrHandle(e) {
-      // 头像报错
-      if (this.userInfo && this.userInfo.avatar_url) {
-        this.userInfo.avatar_url =
-          "https://ops-img-static.huolala.cn/imgs/2021/161880543739409453411634.png";
-      }
-    },
-  },
+    imgErrHandle() {}
+  }
 };
 </script>
 

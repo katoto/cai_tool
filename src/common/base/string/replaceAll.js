@@ -6,10 +6,10 @@
  * @return {String} 替换后的字符串
  */
 const replaceAll = (instr, regexp, replacement) => {
-  let pattern = new RegExp(regexp, 'gm')
-  let tmp = instr.replace(pattern, replacement)
-  pattern = null
-  return tmp
-}
+  let pattern = new RegExp(regexp, "gm");
+  let temporary = instr.replace(pattern, replacement);
+  pattern = undefined;
+  return temporary;
+};
 
-export default replaceAll
+export default replaceAll;

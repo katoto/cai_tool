@@ -1,41 +1,43 @@
-function _parseUrlStrParamsToObj(url) {
-  let strParams = url.split("?")[1];
+function _parseUrlStringParametersToObject(url) {
+  let stringParameters = url.split("?")[1];
   let o = {};
-  if (strParams) {
-    strParams.split("&").forEach((item) => {
-      let [k, val] = item.split("=");
-      if (val && val.indexOf("#") > -1) {
-        val = val.split("#")[0];
+  if (stringParameters) {
+    for (const item of stringParameters.split("&")) {
+      let [k, value] = item.split("=");
+      if (value && value.includes("#")) {
+        value = value.split("#")[0];
       }
-      val = val ? decodeURIComponent(val) : undefined;
+      value = value ? decodeURIComponent(value) : undefined;
       if (o[k]) {
-        o[k] = [].concat(o[k], val);
+        o[k] = [].concat(o[k], value);
       } else {
-        o[k] = val;
+        o[k] = value;
       }
-    });
+    }
   }
   return o;
 }
 
-function _getCurPageOption() {
+function _getCurrentPageOption() {
   let pages = getCurrentPages();
-  let curPage = pages[pages.length - 1];
-  return curPage ? curPage.options || {} : {};
+  let currentPage = pages[pages.length - 1];
+  return currentPage ? currentPage.options || {} : {};
 }
 
-function getUrlParams(url, key) {
-  let paramsObj = {};
+function getUrlParameters(url, key) {
+  let parametersObject = {};
   if ((window && window.location) || url) {
     url = url || window.location.href;
-    paramsObj = _parseUrlStrParamsToObj(url);
+    parametersObject = _parseUrlStringParametersToObject(url);
   } else {
-    paramsObj = _getCurPageOption();
+    parametersObject = _getCurrentPageOption();
   }
   if (key) {
-    return paramsObj[key] ? decodeURIComponent(paramsObj[key]) : undefined;
+    return parametersObject[key]
+      ? decodeURIComponent(parametersObject[key])
+      : undefined;
   }
-  return paramsObj;
+  return parametersObject;
 }
 
-export default getUrlParams;
+export default getUrlParameters;

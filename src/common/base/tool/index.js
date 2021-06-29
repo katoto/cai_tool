@@ -10,18 +10,18 @@
  * @param {Object} obj1 Object to merge
  * @returns {Object} Result of all merge properties
  */
-function merge( /* obj1, obj2, obj3, ... */ ) {
+function merge(/* obj1, obj2, obj3, ... */) {
   var result = {};
 
-  function assignValue(val, key) {
-    if (typeof result[key] === "object" && typeof val === "object") {
-      result[key] = merge(result[key], val);
+  function assignValue(value, key) {
+    if (typeof result[key] === "object" && typeof value === "object") {
+      result[key] = merge(result[key], value);
     } else {
-      result[key] = val;
+      result[key] = value;
     }
   }
-  for (var i = 0, l = arguments.length; i < l; i++) {
-    _forEach(arguments[i], assignValue);
+  for (var index = 0, l = arguments.length; index < l; index++) {
+    _forEach(arguments[index], assignValue);
   }
   return result;
 }
@@ -31,21 +31,21 @@ function merge( /* obj1, obj2, obj3, ... */ ) {
  * @param {Object} obj1 Object to merge
  * @returns {Object} Result of all merge properties
  */
-function deepMerge( /* obj1, obj2, obj3, ... */ ) {
+function deepMerge(/* obj1, obj2, obj3, ... */) {
   var result = {};
 
-  function assignValue(val, key) {
-    if (typeof result[key] === "object" && typeof val === "object") {
-      result[key] = deepMerge(result[key], val);
-    } else if (typeof val === "object") {
-      result[key] = deepMerge({}, val);
+  function assignValue(value, key) {
+    if (typeof result[key] === "object" && typeof value === "object") {
+      result[key] = deepMerge(result[key], value);
+    } else if (typeof value === "object") {
+      result[key] = deepMerge({}, value);
     } else {
-      result[key] = val;
+      result[key] = value;
     }
   }
 
-  for (var i = 0, l = arguments.length; i < l; i++) {
-    _forEach(arguments[i], assignValue);
+  for (var index = 0, l = arguments.length; index < l; index++) {
+    _forEach(arguments[index], assignValue);
   }
   return result;
 }
@@ -55,24 +55,24 @@ function deepMerge( /* obj1, obj2, obj3, ... */ ) {
  * @param {Object|Array} obj The object to iterate
  * @param {Function} fn The callback to invoke for each item
  */
-function _forEach(obj, fn) {
-  if (obj === null || typeof obj === "undefined") {
+function _forEach(object, function_) {
+  if (object === null || typeof object === "undefined") {
     return;
   }
-  if (typeof obj !== "object") {
+  if (typeof object !== "object") {
     /*eslint no-param-reassign:0*/
-    obj = [obj];
+    object = [object];
   }
 
-  if (Array.isArray(obj)) {
+  if (Array.isArray(object)) {
     // Iterate over array values
-    for (var i = 0, l = obj.length; i < l; i++) {
-      fn.call(null, obj[i], i, obj);
+    for (var index = 0, l = object.length; index < l; index++) {
+      function_.call(null, object[index], index, object);
     }
   } else {
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        fn.call(null, obj[key], key, obj);
+    for (var key in object) {
+      if (Object.prototype.hasOwnProperty.call(object, key)) {
+        function_.call(null, object[key], key, object);
       }
     }
   }
@@ -83,36 +83,36 @@ function _forEach(obj, fn) {
  * @param {Object|Array} obj The object to iterate
  * @param {Function} fn The callback to invoke for each item
  */
-function escape(str) {
-  if (str && typeof (str) === 'string') {
-    str = str.replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quto;')
-      .replace(/'/g, '&#39;')
-      .replace(/`/g, '&#96;')
-      .replace(/\//g, '&#x2F;')
-    return str
+function escape(string) {
+  if (string && typeof string === "string") {
+    string = string
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quto;")
+      .replace(/'/g, "&#39;")
+      .replace(/`/g, "&#96;")
+      .replace(/\//g, "&#x2F;");
+    return string;
   }
-  return str
+  return string;
 }
 
 /**
  * 节流 （立即执行）
  */
-function throttle(func, delay = 300) {
-  let flag = true
-  return function () {
+function throttle(function_, delay = 300) {
+  let flag = true;
+  return function() {
     if (flag) {
-      flag = false
-      func.apply(this, arguments)
+      flag = false;
+      Reflect.apply(function_, this, arguments);
       setTimeout(() => {
-        flag = true
-      }, delay)
+        flag = true;
+      }, delay);
     }
-  }
+  };
 }
-
 
 module.exports = {
   merge,

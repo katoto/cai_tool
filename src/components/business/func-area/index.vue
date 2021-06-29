@@ -38,35 +38,35 @@ export default {
       type: Array,
       default() {
         return [];
-      },
+      }
     },
     title: {
       type: String,
-      default: "",
+      default: ""
     },
     small: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   methods: {
     bindItemClick(item) {
       // option page redirect tab
       if (item && item.url) {
         let _option = "page";
-        let _currUrl = item.url;
-        if (item.url.indexOf(":") > -1) {
-          let _paramsArr = _currUrl.split(":");
-          _option = _paramsArr[0];
-          _currUrl = _paramsArr[1];
+        let _currentUrl = item.url;
+        if (item.url.includes(":")) {
+          let _parametersArray = _currentUrl.split(":");
+          _option = _parametersArray[0];
+          _currentUrl = _parametersArray[1];
         }
-        this.$pageHref(_currUrl, "", {
-          type: _option,
+        this.$pageHref(_currentUrl, "", {
+          type: _option
         });
       }
       this.$emit("funcHandle", item);
-    },
-  },
+    }
+  }
 };
 </script>
 <style src="./index.less" lang="less" scoped></style>

@@ -1,8 +1,8 @@
 <script>
 export default {
-  onLaunch: function (options) {},
+  onLaunch: function() {},
   methods: {},
-  async onShow() {},
+  async onShow() {}
 };
 </script>
 

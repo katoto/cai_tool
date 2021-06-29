@@ -22,7 +22,7 @@ import { openFile } from "@/common/business/tool";
 
 export default {
   components: {
-    HllIcon,
+    HllIcon
   },
   created() {},
   mounted() {},
@@ -35,23 +35,23 @@ export default {
       this.$network(
         "/api/feedback.commit/",
         {
-          data: { ...data },
+          data: {}
         },
         {
-          dontHandlerData: true, // 不集中处理
+          dontHandlerData: true // 不集中处理
         }
       )
-        .then((res) => {
+        .then(res => {
           this.isSendOk = true;
           if (res.errInfo) {
             return;
           }
         })
-        .catch((err) => {
+        .catch(error => {
           this.isSendOk = true;
-          console.error(err);
+          console.error(error);
         });
-    },
-  },
+    }
+  }
 };
 </script>

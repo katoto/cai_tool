@@ -4,10 +4,10 @@
  * @return {String} 去空后的字符串
  */
 const trim = instr => {
-  let pattern = /^([\s ]+)|([\s ]+)$/gim
-  let tmp = instr.replace(pattern, '')
-  pattern = null
-  return tmp
-}
+  let pattern = /^(\s+)|(\s+)$/gim;
+  let temporary = instr.replace(pattern, "");
+  pattern = undefined;
+  return temporary;
+};
 
-export default trim
+export default trim;

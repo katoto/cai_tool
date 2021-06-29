@@ -5,21 +5,21 @@
  * @param {string} paramName 删除的参数名
  * @return {string} 替换后的url
  */
-const removeParam = (url, paramName) => {
-  var urlparts = url.split('?')
+const removeParameter = (url, parameterName) => {
+  var urlparts = url.split("?");
   if (urlparts.length >= 2) {
-    var prefix = encodeURIComponent(paramName) + '='
-    var pars = urlparts[1].split(/[&;]/g)
+    var prefix = encodeURIComponent(parameterName) + "=";
+    var pars = urlparts[1].split(/[&;]/g);
 
-    for (var i = pars.length; i-- > 0; ) {
-      if (pars[i].lastIndexOf(prefix, 0) !== -1) {
-        pars.splice(i, 1)
+    for (var index = pars.length; index-- > 0; ) {
+      if (pars[index].lastIndexOf(prefix, 0) !== -1) {
+        pars.splice(index, 1);
       }
     }
 
-    return urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : '')
+    return urlparts[0] + (pars.length > 0 ? "?" + pars.join("&") : "");
   }
-  return url
-}
+  return url;
+};
 
-export default removeParam
+export default removeParameter;

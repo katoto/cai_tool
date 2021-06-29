@@ -5,37 +5,40 @@
  * @param {String} - yyyy|MM|dd|HH|mm|ss|AMPM|week 支持以上几种
  * @return 格式化之后的字符串
  */
+
+let _tfAMPM = function(index, format) {
+  if (~format.indexOf("AMPM")) {
+    index = index % 12;
+    index = index || 12;
+  }
+  return (index < 10 ? "0" : "") + index;
+};
+let _amName = function(hour) {
+  return hour >= 12 ? "PM" : "AM";
+};
+let _getWeek = function(day) {
+  let baseArray = [
+    "星期日",
+    "星期一",
+    "星期二",
+    "星期三",
+    "星期四",
+    "星期五",
+    "星期六"
+  ];
+  return baseArray[day];
+};
+let _tf = function(index) {
+  return (index < 10 ? "0" : "") + index;
+};
+
 function formateTime(time, format = "MM-dd HH:mm:ss") {
   time = Number(time);
-  if (isNaN(time)) {
+  if (Number.isNaN(time)) {
     return false;
   }
   let t = new Date(time);
-  let _tf = function(i) {
-    return (i < 10 ? "0" : "") + i;
-  };
-  let _tfAMPM = function(i) {
-    if (~format.indexOf("AMPM")) {
-      i = i % 12;
-      i = i || 12;
-    }
-    return (i < 10 ? "0" : "") + i;
-  };
-  let _amName = function(hour) {
-    return hour >= 12 ? "PM" : "AM";
-  };
-  let _getWeek = function(day) {
-    let baseArr = [
-      "星期日",
-      "星期一",
-      "星期二",
-      "星期三",
-      "星期四",
-      "星期五",
-      "星期六"
-    ];
-    return baseArr[day];
-  };
+
   return format.replace(/yyyy|MM|dd|HH|mm|ss|AMPM|week/g, function(a) {
     switch (a) {
       case "yyyy":
@@ -47,7 +50,7 @@ function formateTime(time, format = "MM-dd HH:mm:ss") {
       case "dd":
         return _tf(t.getDate());
       case "HH":
-        return _tfAMPM(t.getHours());
+        return _tfAMPM(t.getHours(), format);
       case "ss":
         return _tf(t.getSeconds());
       case "AMPM":
