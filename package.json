@@ -113,8 +113,5 @@
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --fix",
     "*.{md,json,css,less,scss}": "prettier --write"
-  },
-  "publishConfig": {
-    "registry": "http://registry.npm.huolala.work"
   }
 }
