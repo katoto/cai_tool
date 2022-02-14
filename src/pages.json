@@ -3,9 +3,15 @@
     {
       "path": "pages/home/index/index",
       "style": {
-        "navigationBarTitleText": "车吉吉首页",
+        "navigationBarTitleText": "首页",
         "navigationStyle": "custom",
         "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/demo/index",
+      "style": {
+        "navigationBarTitleText": "测试"
       }
     }
   ],

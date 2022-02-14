@@ -1,7 +1,8 @@
 <template>
   <view class="content-box">
     <view class="text">Hello uni template</view>
-    <view class="text">新建分支，一起改进</view>
+    <view class="text">pull体验，改进</view>
+    <button @click.stop="jump2Page">页面跳转</button>
   </view>
 </template>
 
@@ -9,21 +10,25 @@
 export default {
   data() {
     return {
-      pageCityName: ""
+      page: "",
     };
   },
   computed: {
     isLog() {
       return !!this.$store.state.isLog;
-    }
+    },
   },
   watch: {},
-  mounted() {},
+  mounted() {
+    this.$toast("Hello uni temp~");
+  },
   onShow() {},
   onPullDownRefresh() {},
   methods: {
-    imgErrHandle() {}
-  }
+    jump2Page() {
+      this.$pageHref("/pages/demo/index");
+    },
+  },
 };
 </script>
 
@@ -40,7 +45,7 @@ export default {
   -webkit-overflow-scrolling: touch;
   .text {
     text-align: center;
-    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 </style>

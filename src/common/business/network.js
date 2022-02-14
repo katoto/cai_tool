@@ -53,8 +53,8 @@ function network(url = "/", parameters, options = {}) {
  * @param url, params, options = { parseData , showErrorMsg, showLoading, method, dontHandlerData  }
  * @returns
  * @options @parseData // 如果传入options.parseData 则对请求回来数据，进行格式, function
- * @options @showErrorMsg // 默认展示toast error； Boolean true false 
- * @options @showLoading // 默认不展示loading； Boolean true false 
+ * @options @showErrorMsg // 默认展示toast error； Boolean true false
+ * @options @showLoading // 默认不展示loading； Boolean true false
  * @options @method // 请求类型 post 、get; String 类型
  * @options @limitSys // 限定公共参数字段
  * @options @dontHandlerData // 如果传入options.dontHandlerData 则不处理数据格式，直接返回原始数据

@@ -1,6 +1,5 @@
 // 业务工具库
 // base 基础工具函数
-// import store from "@/store/index.js";
 import { isObject } from "../base/index";
 import { network } from "./network";
 

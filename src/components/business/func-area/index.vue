@@ -15,16 +15,6 @@
         </view>
         <text class="item-desc">{{ item.name }}</text>
       </view>
-      <!-- <view class="cont-item">
-        <view class="item-img-box">
-          <image
-            class="item-img"
-            src="https://ops-img-static.huolala.cn/imgs/2021/161847310832163549841537.png"
-          ></image>
-          <view class="flag">首单五折</view>
-        </view>
-        <text class="item-desc">艾养车</text>
-      </view> -->
     </view>
   </view>
 </template>

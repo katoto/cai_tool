@@ -1,7 +1,7 @@
 {
   "name": "小程序名称",
   "appid": "wxcbxxxxxxxxd2",
-  "description": "车吉吉车后市场",
+  "description": "车后市场微信小程序uni模版",
   "versionName": "1.0.0",
   "versionCode": "100",
   "transformPx": false,
@@ -67,13 +67,10 @@
       }
     },
     "router": {
-      "base": "/shop"
+      "base": "/"
     },
     "template": "../public/pc_index.html",
-    "publicPath": "/shop"
-  },
-  "quickapp": {
-    /* 快应用特有相关 */
+    "publicPath": "/"
   },
   "mp-weixin": {
     /* 微信小程序特有相关 wx7dc1c047dadcef63 */
