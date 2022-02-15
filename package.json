@@ -1,6 +1,6 @@
 {
   "name": "@hll/boilerplate-project-uni-chejj",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "uni-app 微信小程序项目模版",
   "keywords": [
     "van",
@@ -18,7 +18,7 @@
   "scripts": {
     "start": "npm run dev:h5",
     "start-mock": "npm run dev:h5-mock",
-    "build": "npm run build:h5 && mv -if ./dist/build/h5/* ./dist && rm -rf ./dist/build && mv ./dist/static/wx/* ./dist/ && mv ./dist/index.html ./dist/200.html",
+    "build": "npm run build:h5 && mv -if ./dist/build/h5/* ./dist && rm -rf ./dist/build && mv ./dist/index.html ./dist/200.html",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
     "build:custom": "cross-env NODE_ENV=production uniapp-cli custom",
     "build:h5": "cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build",

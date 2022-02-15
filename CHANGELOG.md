@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](http://gitlab.huolala.cn:56358/hll-fe/boilerplates/boilerplate-project-uni-chejj/compare/v0.2.8...v0.2.9) (2022-02-15)
+
 ### [0.2.8](http://gitlab.huolala.cn:56358/hll-fe/boilerplates/boilerplate-project-uni-chejj/compare/v0.2.6...v0.2.8) (2022-02-15)
 
 ### Features
