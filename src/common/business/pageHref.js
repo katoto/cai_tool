@@ -4,20 +4,13 @@ import {
   throttle,
   parseUrlStrParamsToObj,
   isWebLink
-} from '@/common/base/index'
-import {
-  toast
-} from './tool';
-import {
-  DefaultCity
-} from "@/common/config.js";
+} from "@/common/base/index";
+import { toast } from "./tool";
+import { DefaultCity } from "@/common/config.js";
 import store from "@/store/index.js";
 
-
 // 自身tabbar
-const TabbarPage = new Set([
-  '/pages/usercenter/index/tabbar'
-])
+const TabbarPage = new Set(["/pages/usercenter/index/tabbar"]);
 // 自身appid
 const SelfAppid = "wxcb2a35013b0815d2";
 
@@ -42,18 +35,18 @@ function pageHref(url, data = "", options = {}) {
       type = "webview";
     } else if (options.appId) {
       if (SelfAppid === options.appId) {
-        if (type !== 'redirect') {
-          type = 'page'
+        if (type !== "redirect") {
+          type = "page";
         }
       } else {
-        type = 'navigateToMiniProgram'
+        type = "navigateToMiniProgram";
       }
     }
     // 处理url 参数
     url = urlStringHandle(url, data);
     console.log(url);
     if (isTabbarPage(url)) {
-      type = 'tab'
+      type = "tab";
     }
   }
   distributeMiniHref(url, type, options);
@@ -62,7 +55,7 @@ function pageHref(url, data = "", options = {}) {
 /**
  *  设置标题
  */
-function setPageTitle(title = '') {
+function setPageTitle(title = "") {
   setTimeout(() => {
     uni.setNavigationBarTitle({
       title
@@ -74,11 +67,11 @@ function setPageTitle(title = '') {
  *  检查是否是tabbar页面
  */
 function isTabbarPage(url) {
-  let domainUrl = url
-  if (url && url.includes('?')) {
-    domainUrl = url.slice(0, url.indexOf('?'))
+  let domainUrl = url;
+  if (url && url.includes("?")) {
+    domainUrl = url.slice(0, url.indexOf("?"));
   }
-  return TabbarPage.has(domainUrl)
+  return TabbarPage.has(domainUrl);
 }
 
 /**
@@ -90,11 +83,11 @@ function urlStringHandle(url, data) {
       ...data
     });
   }
-  if (url.startsWith('pages/') || url.startsWith('subPack/')) {
+  if (url.startsWith("pages/") || url.startsWith("subPack/")) {
     // 兼容pages/xx === /pages/xx 页面也可以跳转
-    return `/${url}`
+    return `/${url}`;
   }
-  return url
+  return url;
 }
 
 /**
@@ -104,9 +97,10 @@ function urlStringHandle(url, data) {
  * @param {String} options 参数
  * @returns {Boolean} true \ false
  */
-function distributeMiniHref(url, type, options = '') {
+function distributeMiniHref(url, type, options = "") {
   console.log(
-    `--distributeMiniHref-- url:${url} type:${type} options:${JSON.stringify(options)}--`);
+    `--distributeMiniHref-- url:${url} type:${type} options:${JSON.stringify(options)}--`
+  );
   switch (type) {
     case "page":
       return uni.navigateTo({
@@ -133,7 +127,7 @@ function distributeMiniHref(url, type, options = '') {
       return navigateToMiniProgramHandle(url, options);
     }
     default:
-      return distributeMiniHref(url, 'page');
+      return distributeMiniHref(url, "page");
   }
 
   /**
@@ -141,8 +135,8 @@ function distributeMiniHref(url, type, options = '') {
    */
   function backHandle(step, options) {
     let delta = options.delta || 1;
-    if (typeof step === 'number') {
-      delta = step
+    if (typeof step === "number") {
+      delta = step;
     }
     return uni.navigateBack({
       delta
@@ -154,16 +148,16 @@ function distributeMiniHref(url, type, options = '') {
    */
   function webViewHandle(webUrl, options) {
     if (!isWebLink(webUrl)) {
-      console.error('pageHref err 跳webview 链接需是https开头');
+      console.error("pageHref err 跳webview 链接需是https开头");
       return false;
     }
     if (!store.state.isLog) {
       // 跳登陆页
-      distributeMiniHref(`/pages/login/wx_login?cb=${encodeURIComponent(webUrl)}`, 'page');
+      distributeMiniHref(`/pages/login/wx_login?cb=${encodeURIComponent(webUrl)}`, "page");
     } else {
-      options.type === "redirect" ?
-        distributeMiniHref(`/pages/webview/index?url=${encodeURIComponent(webUrl)}`, 'redirect') :
-        distributeMiniHref(`/pages/webview/index?url=${encodeURIComponent(webUrl)}`, 'page')
+      options.type === "redirect"
+        ? distributeMiniHref(`/pages/webview/index?url=${encodeURIComponent(webUrl)}`, "redirect")
+        : distributeMiniHref(`/pages/webview/index?url=${encodeURIComponent(webUrl)}`, "page");
     }
   }
 
@@ -171,9 +165,9 @@ function distributeMiniHref(url, type, options = '') {
    *  type navigateToMiniProgram 路由处理
    *  @options 参数todo appId 必须
    */
-  function navigateToMiniProgramHandle(path = '', options) {
+  function navigateToMiniProgramHandle(path = "", options) {
     if (!options.appId || !path) {
-      console.error('pageHref err at navigateToMiniProgram 参数不对');
+      console.error("pageHref err at navigateToMiniProgram 参数不对");
       return false;
     }
     uni.navigateToMiniProgram({
@@ -193,25 +187,25 @@ const throttlePageHref = throttle(pageHref, 250);
 
 /**
  *  coupe 链接适配
- * 1、 第三方小程序 thirdMini: //huolala.cn/?appId=[小程序应用ID]&path=[encodeURIComponent(路径)]
- *     例如：thirdMini://huolala.cn/?appId=wxc4ab51598b79f822&path=pages/common/blank-page/index
+ * 1、 第三方小程序 thirdMini: //xxx.cn/?appId=[小程序应用ID]&path=[encodeURIComponent(路径)]
+ *     例如：thirdMini://xxx.cn/?appId=wxc4ab51598b79f822&path=pages/common/blank-page/index
  *     &type=[小程序版本类型] // ['release', 'develop', 'trial']
  * 2、 车吉吉自有页面 例如： pages/home/index/index
- * 3、 车吉吉容器h5 例如：https://huolala.cn
+ * 3、 车吉吉容器h5 例如：https://xxx.cn
  */
-function coupeUrlAdapt(inpLink = '') {
-  let path = inpLink
+function coupeUrlAdapt(inpLink = "") {
+  let path = inpLink;
   const urlParams = getUrlParams(inpLink);
-  const options = {}
+  const options = {};
   if (!urlParams.appId || !urlParams.path) {
     console.error("coupeUrlAdapt url 配置错误");
     return false;
   }
-  if (inpLink.startsWith('thirdMini')) {
+  if (inpLink.startsWith("thirdMini")) {
     options.appId = urlParams.appId;
-    path = urlParams.path
+    path = urlParams.path;
   }
-  throttlePageHref(path, '', options);
+  throttlePageHref(path, "", options);
 }
 
 /**
@@ -221,42 +215,36 @@ function coupeUrlAdapt(inpLink = '') {
  */
 function resourceUrlAdapt(item = {}, completeHandle) {
   if (item.action_link) {
-    if (item.action_link.startsWith('thirdMini')) {
-      console.warn('跳转thirdMini 请用coupeUrlAdapt');
+    if (item.action_link.startsWith("thirdMini")) {
+      console.warn("跳转thirdMini 请用coupeUrlAdapt");
       coupeUrlAdapt(item.action_link);
     }
     const baseObj = {
       appId: item.wx_link_id,
       completeHandle: completeHandle
-    }
+    };
     if (item.name) {
-      baseObj.title = item.name
+      baseObj.title = item.name;
     }
 
     // #ifdef H5
-    if (item.action_link.startsWith('https://')) {
-      // 跳自己小程序页面，走pageHref
-      if (item.action_link.includes('.huolala.')) {
-        const appParams = uni.getStorageSync("appParams") || "";
-        location.href = joinParams(item.action_link, parseUrlStrParamsToObj(appParams));
-      } else {
-        location.href = `${item.action_link}`
-      }
-      return true
+    if (item.action_link.startsWith("https://")) {
+      location.href = `${item.action_link}`;
+      return true;
     }
     // #endif
     // #ifdef MP-WEIXIN
-    if (item.action_link.startsWith('https://') && item.action_link.includes('.huolala.')) {
+    if (item.action_link.startsWith("https://")) {
       // city & 经纬度
-      let currCityObj = uni.getStorageSync('city') || '';
+      let currCityObj = uni.getStorageSync("city") || "";
       if (currCityObj) {
-        currCityObj = JSON.parse(currCityObj)
+        currCityObj = JSON.parse(currCityObj);
       }
       item.action_link = joinParams(item.action_link, {
-        cityId: currCityObj.id || '',
+        cityId: currCityObj.id || "",
         lat: store.state.latitude || DefaultCity.latitude,
         lon: store.state.longitude || DefaultCity.longitude,
-        from: 'chejj'
+        from: "chejj"
       });
     }
     // #endif
@@ -274,4 +262,4 @@ module.exports = {
   throttlePageHref,
   coupeUrlAdapt,
   resourceUrlAdapt
-}
+};

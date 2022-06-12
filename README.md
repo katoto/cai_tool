@@ -38,8 +38,6 @@ uni-app 微信小程序项目模板整合了路由配置、接口请求 request�
 
 ---
 
-参考原车吉吉 https://huolala.feishu.cn/docs/doccnUUd5wrl9hE52xPzqKR5p2b
-
 ### 二、git 提交规范
 
 良好的 commit message 能大大提高代码维护的效率，so 尽量按下面来，写清 commit 了什么内容。如果不记得了也可以使用`npm run commit`进行命令行选择提交。
@@ -95,9 +93,6 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
 
 ### 五、其他资料
-
-uni-app 小程序基础及业务组件库
-http://uniui.w3c.huolala.work
 
 [uniapp 官网](https://uniapp.dcloud.io/)
 

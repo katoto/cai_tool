@@ -1,7 +1,7 @@
 {
-  "name": "@hll/boilerplate-project-uni-chejj",
+  "name": "bechentable",
   "version": "0.2.9",
-  "description": "uni-app 微信小程序项目模版",
+  "description": "百姓餐桌",
   "keywords": [
     "van",
     "uni-app",
@@ -12,7 +12,7 @@
   "maintainers": [
     {
       "name": "zg.xie",
-      "email": "zg.xie@huolala.cn"
+      "email": "zg.xie@qq.com"
     }
   ],
   "scripts": {
@@ -80,7 +80,6 @@
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0-26920200409002",
     "@dcloudio/webpack-uni-mp-loader": "^2.0.0-26920200409002",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.0-26920200409002",
-    "@hll/lint-config": "^1.3.3",
     "@types/html5plus": "*",
     "@types/uni-app": "*",
     "@vue/cli-plugin-babel": "~4.3.0",

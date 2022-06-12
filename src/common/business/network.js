@@ -3,13 +3,12 @@ import store from "@/store/index.js";
 import { toast } from "./tool";
 
 const ApiHostMap = {
-  stg: "https://car-life-stg.huolala.cn",
-  pre: "https://car-life-pre.huolala.cn",
-  prod: "https://car-life.huolala.cn"
+  stg: "https://car-life-stg.xxx.cn",
+  pre: "https://car-life-pre.xxx.cn",
+  prod: "https://car-life.xxx.cn"
 };
 
 let baseURL = ApiHostMap.prod;
-// car-life.huolala.cn
 const Header = {};
 
 let RequestObject = {

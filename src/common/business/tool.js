@@ -65,7 +65,7 @@ function openFile(fileUrl = "", filename = "table.xlsx") {
     filename = `${filename}.xlsx`;
   }
   wx.downloadFile({
-    url: fileUrl || "https://huolala.cn/table.xlsx",
+    url: fileUrl || "https://xxx/table.xlsx",
     filePath: `${wx.env.USER_DATA_PATH}/${filename}`,
     success: function (response) {
       wx.openDocument({

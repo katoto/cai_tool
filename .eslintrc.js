@@ -1,6 +1,4 @@
-const lintConfig = require("@hll/lint-config");
-
-module.exports = Object.assign(lintConfig.vue(), {
+module.exports = {
   globals: {
     wx: "readonly",
     uni: "readonly",
@@ -22,7 +20,12 @@ module.exports = Object.assign(lintConfig.vue(), {
     "unicorn/no-array-for-each": "off",
     "unicorn/no-this-assignment": "off",
     "vue/no-side-effects-in-computed-properties": "off",
-    "no-unreachable": 'off',
-    "no-dupe-keys": 'off'
+    "no-unreachable": "off",
+    "no-dupe-keys": "off"
+  },
+  parserOptions: {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "parser": "babel-eslint"
   }
-});
+};

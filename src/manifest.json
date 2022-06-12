@@ -60,7 +60,7 @@
       "disableHostCheck": true,
       "proxy": {
         "/mock/": {
-          "target": "http://devtool.huolala.work/",
+          "target": "http://devtool.xxx.work/",
           "changeOrigin": true,
           "secure": true
         }
