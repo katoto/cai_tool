@@ -13,6 +13,12 @@
       "style": {
         "navigationBarTitleText": "测试"
       }
+    },
+    {
+      "path": "pages/menu/index",
+      "style": {
+        "navigationBarTitleText": "农家好菜品"
+      }
     }
   ],
   "globalStyle": {

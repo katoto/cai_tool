@@ -1,6 +1,6 @@
 <template>
   <view style="text-align: center">
-    测试页
+    测试页f3w4
     <view>
       <button @click="openPdf">打开pdf</button>
     </view>
